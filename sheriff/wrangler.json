@@ -9,7 +9,7 @@
     "run_worker_first": true
   },
   "vars": {
-    "SUPABASE_URL": "https://vruzpmygbloepjwtbgle.supabase.co",
+    "SUPABASE_URL": "https://cnbaxsbecfjeldbzocbq.supabase.co",
     "SUPABASE_ANON_KEY": "sb_publishable_jg5YXgM9qXw_VMq6UAXHAw_LXScE32Y"
   }
 }
