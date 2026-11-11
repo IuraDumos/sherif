@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b0d10">
+    <title>Sheriff | Profilul tău</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="profile-dashboard site-page" data-auth-state="checking">
+    <main class="app-shell">
+      <aside class="site-sidebar" aria-label="Navigare principală">
+        <p class="sidebar-caption">SHERIFF</p>
+        <a class="sidebar-link" href="regulament.html"><span aria-hidden="true">⚖</span> Regulamentul</a>
+        <a class="sidebar-link" href="cod.html"><span aria-hidden="true">▤</span> Codul cu articole</a>
+        <a class="sidebar-link active" href="profil.html" aria-current="page"><span aria-hidden="true">♙</span> Profilul meu</a>
+        <a class="sidebar-link" href="admin.html" data-required-role="STAFF" hidden><span aria-hidden="true">⚙</span> Admin</a>
+        <button class="sidebar-link" type="button" data-sign-out hidden><span aria-hidden="true">↪</span> Ieșire</button>
+      </aside>
+      <header class="topbar">
+        <a class="brand" href="regulament.html" aria-label="Sheriff, regulamentul">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 44" fill="none">
+              <path d="M20 2.5 35 8v12.5c0 10.1-6.2 16.7-15 21C11.2 37.2 5 30.6 5 20.5V8l15-5.5Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="1.8"/>
+              <path d="m20 11 2.3 5.2 5.7.5-4.3 3.8 1.3 5.5-5-2.9-5 2.9 1.3-5.5-4.3-3.8 5.7-.5L20 11Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>SHERIFF</strong>
+            <span>Biroul șerifului · Moldova RP</span>
+          </span>
+        </a>
+        <button class="topbar-discord" type="button" data-discord-connect aria-label="Discord: Neconectat" title="Neconectat">
+          <svg class="discord-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M19.73 5.19A18.2 18.2 0 0 0 15.26 3.8l-.55 1.12a16.8 16.8 0 0 0-5.42 0L8.74 3.8a18.2 18.2 0 0 0-4.47 1.39C1.44 9.35.68 13.41 1.06 17.42a18.3 18.3 0 0 0 5.48 2.77l1.18-1.91a11.8 11.8 0 0 1-1.86-.9l.46-.36a13.1 13.1 0 0 0 11.36 0l.46.36a11.8 11.8 0 0 1-1.86.9l1.18 1.91a18.3 18.3 0 0 0 5.48-2.77c.45-4.65-.77-8.67-3.21-12.23ZM8.95 14.91c-1.08 0-1.96-.99-1.96-2.2s.86-2.2 1.96-2.2 1.98.99 1.96 2.2c0 1.21-.86 2.2-1.96 2.2Zm6.1 0c-1.08 0-1.96-.99-1.96-2.2s.86-2.2 1.96-2.2 1.98.99 1.96 2.2c0 1.21-.86 2.2-1.96 2.2Z"/>
+          </svg>
+          <span data-discord-label>Neconectat</span>
+        </button>
+        <span class="discord-feedback" data-discord-feedback role="status" hidden></span>
+        <span class="topbar-note"><span class="status-dot"></span> SISTEM INTERN · SHERIFF</span>
+      </header>
+
+      <div class="profile-dashboard-layout">
+        <div class="profile-dashboard-content">
+          <section class="profile-hero" id="my-profile" aria-labelledby="profile-title">
+            <div class="hero-emblem" aria-hidden="true">
+              <svg viewBox="0 0 40 44" fill="none">
+                <path d="M20 2.5 35 8v12.5c0 10.1-6.2 16.7-15 21C11.2 37.2 5 30.6 5 20.5V8l15-5.5Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="1.8"/>
+                <path d="m20 11 2.3 5.2 5.7.5-4.3 3.8 1.3 5.5-5-2.9-5 2.9 1.3-5.5-4.3-3.8 5.7-.5L20 11Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="hero-topline">
+              <span class="hero-kicker">SHERIFF'S OFFICE · PROFIL DE MEMBRU</span>
+              <span class="member-status" id="member-status" data-state="disconnected">
+                <span class="status-dot"></span>
+                <span id="member-status-label">Neconectat</span>
+              </span>
+            </div>
+            <div class="hero-member">
+              <div class="profile-avatar" aria-hidden="true">
+                <span data-avatar-fallback>♙</span>
+                <img data-discord-avatar alt="" hidden>
+              </div>
+              <div class="hero-identity">
+                <p class="hero-label">PROFILUL MEU</p>
+                <h1 id="profile-title" data-profile-field="name">Membru Sheriff</h1>
+                <p class="hero-discord" data-profile-field="discord-display">@ Discord neconectat</p>
+              </div>
+            </div>
+            <div class="hero-facts">
+              <div><span>Grad</span><strong data-profile-field="grade">Atribuit de administrator</strong></div>
+              <div><span>Discord</span><strong data-profile-field="discord-short">Neconectat</strong></div>
+              <div><span>Departament</span><strong>Biroul Sheriff-ului</strong></div>
+            </div>
+          </section>
+
+          <section class="profile-information" aria-labelledby="information-title">
+            <div class="information-heading">
+              <div>
+                <p class="hero-label">CONTUL MEU</p>
+                <h2 id="information-title">Informații profil</h2>
+              </div>
+              <span class="information-count">3 informații</span>
+            </div>
+            <dl class="profile-details">
+              <div><dt>Nume</dt><dd data-profile-field="name">—</dd></div>
+              <div><dt>Grad în facțiune</dt><dd data-profile-field="grade">Atribuit de administrator</dd></div>
+              <div><dt>Cont Discord</dt><dd data-profile-field="discord">—</dd></div>
+            </dl>
+          </section>
+          <footer class="footer">SHERIFF'S OFFICE <span>·</span> Profilul membrilor</footer>
+        </div>
+      </div>
+    </main>
+    <script>
+      const avatar = document.querySelector("[data-discord-avatar]");
+      const avatarFallback = document.querySelector("[data-avatar-fallback]");
+
+      function getDiscordAvatarUrl(user) {
+        const avatarUrl = user?.avatarUrl || user?.avatar_url;
+        if (typeof avatarUrl === "string") {
+          try {
+            const url = new URL(avatarUrl);
+            if (url.protocol === "https:" && ["cdn.discordapp.com", "media.discordapp.net"].includes(url.hostname)) {
+              return url.href;
+            }
+          } catch {
+            return null;
+          }
+        }
+
+        const userId = user?.id || user?.discordId;
+        const avatarHash = user?.avatar;
+        if (typeof userId === "string" && typeof avatarHash === "string") {
+          const extension = avatarHash.startsWith("a_") ? "gif" : "png";
+          return `https://cdn.discordapp.com/avatars/${encodeURIComponent(userId)}/${encodeURIComponent(avatarHash)}.${extension}?size=256`;
+        }
+        return null;
+      }
+
+      document.addEventListener("sheriff:auth-state", (event) => {
+        const user = event.detail?.isAuthenticated ? event.detail.user : null;
+        const connected = Boolean(user);
+        const status = document.querySelector("#member-status");
+        const avatarUrl = getDiscordAvatarUrl(user);
+
+        status.dataset.state = connected ? "connected" : "disconnected";
+        document.querySelector("#member-status-label").textContent = connected ? "Conectat" : "Neconectat";
+        avatar.hidden = !avatarUrl;
+        avatarFallback.hidden = Boolean(avatarUrl);
+        avatar.onerror = () => {
+          if (avatar.src !== avatarUrl) return;
+          avatar.hidden = true;
+          avatarFallback.hidden = false;
+        };
+        if (avatarUrl) avatar.src = avatarUrl;
+        else avatar.removeAttribute("src");
+        document.querySelectorAll('[data-profile-field="name"]').forEach((field) => {
+          field.textContent = user?.name || (connected ? "Membru Sheriff" : "—");
+        });
+        document.querySelectorAll('[data-profile-field="grade"]').forEach((field) => {
+          field.textContent = user?.grade || "Atribuit de administrator";
+        });
+        document.querySelector('[data-profile-field="discord"]').textContent = user?.discord || "—";
+        document.querySelector('[data-profile-field="discord-short"]').textContent = user?.discord || "Neconectat";
+        document.querySelector('.hero-discord').textContent = user?.discord ? `@ ${user.discord}` : "@ Discord neconectat";
+      });
+    </script>
+    <script src="role-navigation.js"></script>
+    <script src="interaction-limits.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="sheriff-auth.js"></script>
+  </body>
+</html>

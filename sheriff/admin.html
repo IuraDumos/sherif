@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#d8c6a9">
+    <title>Sheriff | ADMIN</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="site-page admin-page" data-auth-state="checking">
+    <main class="app-shell">
+      <aside class="site-sidebar" aria-label="Navigare principală">
+        <p class="sidebar-caption">SHERIFF</p>
+        <a class="sidebar-link" href="regulament.html"><span aria-hidden="true">⚖</span> Regulamentul</a>
+        <a class="sidebar-link" href="cod.html"><span aria-hidden="true">▤</span> Codul cu articole</a>
+        <a class="sidebar-link" href="profil.html"><span aria-hidden="true">♙</span> Profilul meu</a>
+        <a class="sidebar-link active" href="admin.html" aria-current="page" data-required-role="STAFF" hidden><span aria-hidden="true">⚙</span> Admin</a>
+        <button class="sidebar-link" type="button" data-sign-out hidden><span aria-hidden="true">↪</span> Ieșire</button>
+      </aside>
+      <header class="topbar">
+        <a class="brand" href="regulament.html" aria-label="Sheriff, regulamentul">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 44" fill="none">
+              <path d="M20 2.5 35 8v12.5c0 10.1-6.2 16.7-15 21C11.2 37.2 5 30.6 5 20.5V8l15-5.5Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="1.8"/>
+              <path d="m20 11 2.3 5.2 5.7.5-4.3 3.8 1.3 5.5-5-2.9-5 2.9 1.3-5.5-4.3-3.8 5.7-.5L20 11Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>SHERIFF</strong>
+            <span>Biroul șerifului · Moldova RP</span>
+          </span>
+        </a>
+        <button class="topbar-discord" type="button" data-discord-connect aria-label="Discord: Neconectat" title="Neconectat">
+          <svg class="discord-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M19.73 5.19A18.2 18.2 0 0 0 15.26 3.8l-.55 1.12a16.8 16.8 0 0 0-5.42 0L8.74 3.8a18.2 18.2 0 0 0-4.47 1.39C1.44 9.35.68 13.41 1.06 17.42a18.3 18.3 0 0 0 5.48 2.77l1.18-1.91a11.8 11.8 0 0 1-1.86-.9l.46-.36a13.1 13.1 0 0 0 11.36 0l.46.36a11.8 11.8 0 0 1-1.86.9l1.18 1.91a18.3 18.3 0 0 0 5.48-2.77c.45-4.65-.77-8.67-3.21-12.23ZM8.95 14.91c-1.08 0-1.96-.99-1.96-2.2s.86-2.2 1.96-2.2 1.98.99 1.96 2.2c0 1.21-.86 2.2-1.96 2.2Zm6.1 0c-1.08 0-1.96-.99-1.96-2.2s.86-2.2 1.96-2.2 1.98.99 1.96 2.2c0 1.21-.86 2.2-1.96 2.2Z"/>
+          </svg>
+          <span data-discord-label>Neconectat</span>
+        </button>
+        <span class="discord-feedback" data-discord-feedback role="status" hidden></span>
+        <span class="topbar-note"><span class="status-dot"></span> SISTEM INTERN · SHERIFF</span>
+      </header>
+
+      <section class="admin-hero" aria-labelledby="page-title">
+        <div class="admin-hero-copy">
+          <p class="eyebrow">SHERIFF'S OFFICE <span>·</span> ZONĂ ADMINISTRATIVĂ</p>
+          <h1 id="page-title">Panou de control</h1>
+          <p>Un spațiu central pentru instrumentele și informațiile Biroului Sheriff-ului.</p>
+        </div>
+        <div class="admin-hero-seal" aria-hidden="true">
+          <svg viewBox="0 0 64 72" fill="none">
+            <path d="M32 3 57 12v20c0 17-10.3 28.1-25 37C17.3 60.1 7 49 7 32V12l25-9Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="2"/>
+            <path d="m32 18 4.1 9.1 10 .9-7.5 6.7 2.3 9.7-8.9-5.1-8.9 5.1 2.3-9.7-7.5-6.7 10-.9L32 18Z" fill="currentColor"/>
+          </svg>
+        </div>
+      </section>
+
+      <section class="admin-welcome panel" aria-labelledby="admin-welcome-title">
+        <div class="admin-welcome-icon" aria-hidden="true">✦</div>
+        <div>
+          <p class="admin-section-label">BINE AI VENIT</p>
+          <h2 id="admin-welcome-title">Zona administrativă</h2>
+          <p>Gestionează gradele și accesul membrilor. Jurnalul păstrează Discordul, adresa IP, ora și rezultatul accesului timp de 30 de zile.</p>
+        </div>
+        <span class="admin-status" id="admin-console-status" role="status"><span></span> Se verifică accesul…</span>
+      </section>
+
+      <section class="admin-member-management" aria-labelledby="members-title">
+        <div class="admin-section-heading">
+          <div>
+            <p class="admin-section-label">ECHIPA</p>
+            <h2 id="members-title">Membri și permisiuni</h2>
+          </div>
+          <button class="admin-refresh" id="admin-refresh" type="button">Reîncarcă datele</button>
+        </div>
+        <p class="admin-data-message" id="members-message" role="status"></p>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr><th>Membru</th><th>Discord ID</th><th>Grad</th><th>Acces</th><th>Acțiune</th></tr>
+            </thead>
+            <tbody id="members-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-section" aria-labelledby="admin-tools-title">
+        <div class="admin-section-heading">
+          <div>
+            <p class="admin-section-label">NAVIGARE RAPIDĂ</p>
+            <h2 id="admin-tools-title">Instrumente Sheriff</h2>
+          </div>
+          <span class="admin-section-note">Pagini disponibile</span>
+        </div>
+        <div class="admin-tools-grid">
+          <a class="admin-tool-card" href="profil.html">
+            <span class="admin-tool-icon" aria-hidden="true">♙</span>
+            <span class="admin-tool-copy">
+              <strong>Profilul membrilor</strong>
+              <span>Consultă informațiile profilului.</span>
+            </span>
+            <span class="admin-tool-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="admin-tool-card" href="cod.html">
+            <span class="admin-tool-icon" aria-hidden="true">▤</span>
+            <span class="admin-tool-copy">
+              <strong>Codul cu articole</strong>
+              <span>Consultă articolele și sancțiunile.</span>
+            </span>
+            <span class="admin-tool-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="admin-tool-card" href="regulament.html">
+            <span class="admin-tool-icon" aria-hidden="true">⚖</span>
+            <span class="admin-tool-copy">
+              <strong>Regulamentul</strong>
+              <span>Deschide regulile Biroului Sheriff-ului.</span>
+            </span>
+            <span class="admin-tool-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="admin-member-management" aria-labelledby="access-logs-title">
+        <div class="admin-section-heading">
+          <div>
+            <p class="admin-section-label">AUDIT · 30 DE ZILE</p>
+            <h2 id="access-logs-title">Jurnal de acces</h2>
+          </div>
+        </div>
+        <p class="admin-privacy-note">Jurnalul conține Discordul, adresa IP, data și rezultatul autentificării. Datele sunt vizibile doar personalului STAFF și se șterg după 30 de zile.</p>
+        <p class="admin-data-message" id="logs-message" role="status"></p>
+        <div class="admin-table-wrap">
+          <table class="admin-table access-log-table">
+            <thead>
+              <tr><th>Discord ID</th><th>Adresă IP</th><th>Data și ora</th><th>Rezultat</th></tr>
+            </thead>
+            <tbody id="access-logs-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+      <footer class="footer">SHERIFF'S OFFICE <span>·</span> Panou administrativ</footer>
+    </main>
+    <script src="role-navigation.js"></script>
+    <script src="interaction-limits.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="sheriff-auth.js"></script>
+    <script src="admin-console.js"></script>
+  </body>
+</html>
